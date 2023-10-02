@@ -3,7 +3,7 @@ layout: post
 title: Go-Back-N과 Selective Repeat 프로토콜의 구현에 관한 생각
 ---
 
-나는 Go-Back-N과 Selective Repeat 프로토콜이 '정확히' 무엇인지는 모른다. 나의 이전 글인 ['순서번호에 관한 생각'](/pages/computer/2023/09/22/on-sequence-number.html)에는 굉장히 추상적인 형태로 설명이 되어있는데, 그것들을 Go-Back-N과 Selective Repeat 프로토콜이라고 부를 수 있을까? 그런 것을 모른다는 뜻이다. 아마 중요하지 않을 것으로 생각된다. 어쨌든 나는 '순서번호에 관한 생각'에 Go-Back-N과 Selective Repeat 프로토콜이라고 설명되어 있는 것들의 구현에 대해 설명하려고 한다. 그래서 그 글을 읽어야 이 글을 이해할 수 있다.
+나는 Go-Back-N과 Selective Repeat 프로토콜이 '정확히' 무엇인지는 모른다. 나의 이전 글인 ['순서번호에 관한 생각'](/pages/computer/network/2023/09/22/on-sequence-number.html)에는 굉장히 추상적인 형태로 설명이 되어있는데, 그것들을 Go-Back-N과 Selective Repeat 프로토콜이라고 부를 수 있을까? 그런 것을 모른다는 뜻이다. 아마 중요하지 않을 것으로 생각된다. 어쨌든 나는 '순서번호에 관한 생각'에 Go-Back-N과 Selective Repeat 프로토콜이라고 설명되어 있는 것들의 구현에 대해 설명하려고 한다. 그래서 그 글을 읽어야 이 글을 이해할 수 있다.
 
 먼저 앞으로의 설명에 쓰일 표기법 하나를 소개하고자 한다. `modeq(x, range, div)`는 range안에 있는 값 중 div로 나눈 나머지가 x인 값을 나타낸다. 예를 들어, `modeq(3, [20, 30), 10)`의 값은 23이다.
 
